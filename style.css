@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap');
+
+:root {
+    color-scheme: light;
+    --ink: #172d35;
+    --muted: #667b80;
+    --paper: #ffffff;
+    --canvas: #edf5f3;
+    --line: #dce8e5;
+    --teal: #087e78;
+    --teal-dark: #05645f;
+    --coral: #ef765b;
+    --danger: #a53f35;
+    --danger-bg: #fff0ec;
+    font-family: 'DM Sans', 'Segoe UI', sans-serif;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 48px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--ink);
+    background-color: var(--canvas);
+    background-image:
+        radial-gradient(ellipse at 12% 12%, rgba(8, 126, 120, 0.12), transparent 34%),
+        radial-gradient(ellipse at 88% 86%, rgba(239, 118, 91, 0.12), transparent 32%),
+        repeating-linear-gradient(135deg, rgba(23, 45, 53, 0.018) 0 1px, transparent 1px 8px);
+}
+
+form {
+    width: min(100%, 420px);
+    padding: 34px 36px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    background: var(--paper);
+    border: 1px solid rgba(220, 232, 229, 0.9);
+    border-top: 4px solid var(--teal);
+    border-radius: 8px;
+    box-shadow: 0 18px 48px rgba(23, 45, 53, 0.11);
+    animation: arrive 420ms ease-out both;
+}
+
+form h2 {
+    margin: 0 0 15px;
+    color: var(--ink);
+    font-family: 'Manrope', 'Segoe UI', sans-serif;
+    font-size: 27px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+form span {
+    margin-top: 3px;
+    color: #40575e;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+form input,
+form select,
+form textarea {
+    width: 100%;
+    min-height: 44px;
+    padding: 10px 12px;
+    color: var(--ink);
+    background: #f7faf9;
+    border: 1px solid var(--line);
+    border-radius: 5px;
+    outline: none;
+    font: inherit;
+    transition: border-color 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+    background: #fff;
+    border-color: var(--teal);
+    box-shadow: 0 0 0 3px rgba(8, 126, 120, 0.13);
+}
+
+form input[type='file'] {
+    padding: 7px;
+    font-size: 13px;
+}
+
+form textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+form button {
+    min-height: 46px;
+    margin-top: 9px;
+    padding: 11px 16px;
+    color: #fff;
+    background: var(--teal);
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 700;
+    transition: background-color 160ms ease, transform 160ms ease;
+}
+
+form button:hover {
+    background: var(--teal-dark);
+    transform: translateY(-1px);
+}
+
+form button:focus-visible,
+a:focus-visible {
+    outline: 3px solid rgba(239, 118, 91, 0.6);
+    outline-offset: 3px;
+}
+
+body > p {
+    margin: 20px 0 0;
+    color: var(--muted);
+    text-align: center;
+    font-size: 14px;
+}
+
+a {
+    color: var(--teal-dark);
+    font-weight: 700;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+}
+
+a:hover {
+    color: #b94d36;
+}
+
+.info {
+    width: min(100%, 420px);
+    margin-top: 15px;
+}
+
+.info p {
+    margin: 5px 0;
+    padding: 11px 14px;
+    color: var(--danger);
+    background: var(--danger-bg);
+    border: 1px solid #f5c9be;
+    border-left: 4px solid var(--coral);
+    border-radius: 5px;
+    font-size: 13px;
+}
+
+body:not(:has(form)) h1 {
+    width: min(100%, 680px);
+    margin: 0 0 24px;
+    padding: 34px 38px;
+    background: var(--paper);
+    border-left: 5px solid var(--coral);
+    border-radius: 7px;
+    box-shadow: 0 18px 48px rgba(23, 45, 53, 0.1);
+    font-family: 'Manrope', 'Segoe UI', sans-serif;
+    font-size: clamp(25px, 5vw, 38px);
+    line-height: 1.2;
+    animation: arrive 420ms ease-out both;
+}
+
+body:not(:has(form)) > a {
+    width: min(100%, 680px);
+    margin: 5px 0;
+    padding: 16px 19px;
+    color: var(--teal-dark);
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 5px;
+    text-decoration: none;
+    transition: border-color 160ms ease, transform 160ms ease;
+}
+
+body:not(:has(form)) > a:hover {
+    border-color: var(--teal);
+    transform: translateX(3px);
+}
+
+@keyframes arrive {
+    from { opacity: 0; transform: translateY(9px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 520px) {
+    body {
+        padding: 28px 15px;
+    }
+
+    form {
+        padding: 28px 22px 24px;
+    }
+
+    body:not(:has(form)) h1 {
+        padding: 27px 23px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
